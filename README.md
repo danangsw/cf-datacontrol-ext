@@ -24,5 +24,134 @@ Format related properties are very easy to use, they can be set via designers th
 
 Overriding Paint() is not hard as well, but requires some coding. To illustrate how that can be done, I've created small sample which shows sample data in several custom columns.
 
+## Code sample
+
+See on the code sample below:
+
+```C#
+private void SetupTableStyles()
+        {
+            var alternatingColor = System.Drawing.Color.LightGray;
+            DataTable vehicle = this.dataSource.Tables[1];
+
+            // ID Column 
+            var dataGridCustomColumn0  = new DataGridCustomTextBoxColumn();
+            dataGridCustomColumn0.Owner = this.dataGrid1;
+            dataGridCustomColumn0.Format = "0##";
+            dataGridCustomColumn0.FormatInfo = CultureInfo.InvariantCulture;
+            dataGridCustomColumn0.HeaderText = vehicle.Columns[0].ColumnName;
+            dataGridCustomColumn0.MappingName = vehicle.Columns[0].ColumnName;
+            dataGridCustomColumn0.Width = this.dataGrid1.Width * 10 / 100;       // 10% of the grid size
+            dataGridCustomColumn0.AlternatingBackColor = alternatingColor;
+            dataGridCustomColumn0.ReadOnly = true;
+
+            this.DataGridTableStyle1.GridColumnStyles.Add(dataGridCustomColumn0);
+
+            // Make column
+            var dataGridCustomColumn1 = new DataGridCustomTextBoxColumn();
+            dataGridCustomColumn1.Owner = this.dataGrid1;
+            dataGridCustomColumn1.HeaderText = vehicle.Columns[1].ColumnName;
+            dataGridCustomColumn1.MappingName = vehicle.Columns[1].ColumnName;
+            dataGridCustomColumn1.NullText = "-Unknown-";
+            dataGridCustomColumn1.Width = this.dataGrid1.Width * 10 / 100;       // 10% of the grid size
+            dataGridCustomColumn1.Alignment = HorizontalAlignment.Center;
+            dataGridCustomColumn1.AlternatingBackColor = alternatingColor;
+
+            this.DataGridTableStyle1.GridColumnStyles.Add(dataGridCustomColumn1);
+
+            // Mileage column
+            var dataGridCustomColumn2 = new DataGridCustomUpDownColumn();
+            dataGridCustomColumn2.Owner = this.dataGrid1;
+            dataGridCustomColumn2.Format = "N2";
+            dataGridCustomColumn2.FormatInfo = CultureInfo.InvariantCulture;
+            dataGridCustomColumn2.HeaderText = vehicle.Columns[2].ColumnName;
+            dataGridCustomColumn2.MappingName = vehicle.Columns[2].ColumnName;
+            dataGridCustomColumn2.NullText = "-Unknown-";
+            dataGridCustomColumn2.Width = this.dataGrid1.Width * 10 / 100;         // 10% of the grid size
+            dataGridCustomColumn2.Alignment = HorizontalAlignment.Right;
+            dataGridCustomColumn2.AlternatingBackColor = alternatingColor;
+            dataGridCustomColumn2.ReadOnly = true;
+
+            this.DataGridTableStyle1.GridColumnStyles.Add(dataGridCustomColumn2);
+
+            // Availability column
+            var dataGridCustomColumn3 = new DataGridCustomCheckBoxColumn();
+            dataGridCustomColumn3.Owner = this.dataGrid1;
+            dataGridCustomColumn3.HeaderText = vehicle.Columns[3].ColumnName;
+            dataGridCustomColumn3.MappingName = vehicle.Columns[3].ColumnName;
+            dataGridCustomColumn3.NullText = "-";
+            dataGridCustomColumn3.Width = this.dataGrid1.Width * 10 / 100;        // 10% of the grid size
+            dataGridCustomColumn3.Alignment = HorizontalAlignment.Center;
+            dataGridCustomColumn3.AlternatingBackColor = alternatingColor;
+
+            this.DataGridTableStyle1.GridColumnStyles.Add(dataGridCustomColumn3);
+
+            // Fuel Level column
+            var dataGridCustomColumn4 = new DataGridCustomComboBoxColumn();
+            dataGridCustomColumn4.Owner =this.dataGrid1;
+            dataGridCustomColumn4.HeaderText = vehicle.Columns[4].ColumnName;
+            dataGridCustomColumn4.MappingName = vehicle.Columns[4].ColumnName;
+            dataGridCustomColumn4.NullText = "-Unknown-";
+            dataGridCustomColumn4.Width = this.dataGrid1.Width * 10 / 100;
+            dataGridCustomColumn4.AlternatingBackColor = alternatingColor;
+
+            this.DataGridTableStyle1.GridColumnStyles.Add(dataGridCustomColumn4);
+
+            // Last Used column
+            var dataGridCustomColumn5 = new DataGridCustomDateTimePickerColumn();
+            dataGridCustomColumn5.Owner = this.dataGrid1;
+            dataGridCustomColumn5.HeaderText = vehicle.Columns[5].ColumnName;
+            dataGridCustomColumn5.MappingName = vehicle.Columns[5].ColumnName;
+            dataGridCustomColumn5.NullText = "-Unknown-";
+            dataGridCustomColumn5.Width = this.dataGrid1.Width * 10 / 100;        // 10% of the grid size
+            dataGridCustomColumn5.Alignment = HorizontalAlignment.Left;
+            dataGridCustomColumn5.AlternatingBackColor = alternatingColor;
+            
+            this.DataGridTableStyle1.GridColumnStyles.Add(dataGridCustomColumn5);
+
+            // Price column
+            var dataGridCustomColumn6 = new DataGridCustomDateTimePickerColumn();
+            dataGridCustomColumn6.Owner = this.dataGrid1;
+            dataGridCustomColumn6.Format = "#,#.00#";
+            dataGridCustomColumn6.FormatInfo = CultureInfo.InvariantCulture;
+            dataGridCustomColumn6.HeaderText = vehicle.Columns[6].ColumnName;
+            dataGridCustomColumn6.MappingName = vehicle.Columns[6].ColumnName;
+            dataGridCustomColumn6.NullText = "-Unknown-";
+            dataGridCustomColumn6.Width = this.dataGrid1.Width * 10 / 100;        // 10% of the grid size
+            dataGridCustomColumn6.Alignment = HorizontalAlignment.Right;
+            dataGridCustomColumn6.AlternatingBackColor = alternatingColor;
+            dataGridCustomColumn6.ReadOnly = true;
+
+            this.DataGridTableStyle1.GridColumnStyles.Add(dataGridCustomColumn6);
+         
+            // Set grid
+            this.DataGridTableStyle1.MappingName = vehicle.TableName;             // Setup table mapping name
+            this.dataGrid1.DataSource = vehicle;                                  // Setup grid's data source
+            this.dataGrid1.TableStyles.Add(this.DataGridTableStyle1);             // Add table style of datagrid
+            
+            ComboBox cb = (ComboBox) dataGridCustomColumn4.HostedControl;
+
+            DataTable fuel = this.dataSource.Tables[0];                           // Set up data source
+
+            cb.DataSource = fuel;                                                 // For combo box column
+            cb.DisplayMember = fuel.Columns[0].ColumnName;
+            cb.ValueMember = fuel.Columns[0].ColumnName;
+
+            this.dataGrid1.CurrentRowIndex = 0;                                    // Move to the middle of the table
+        }
+```
+
+## Sample screenshot
+sample 1
+![](sample1.png)
+
+sample 2
+![](sample2.png)
+
 ## Credit
 [.NET Compact Framework Team](https://blogs.msdn.microsoft.com/netcfteam/2006/04/25/net-compact-framework-v2-service-pack-1-data-grid-control-enhancements/)
+
+## System Requirement
+1. .Net Compact Framework 3.5 Service Pack 1
+2. Windows Mobile 5.0 or later
+3. Microsoft Visual Studio 2008
