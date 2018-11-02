@@ -139,5 +139,16 @@ private void SetupTableStyles()
         }
 ```
 
+## Sample screenshot
+sample 1
+![](sample1.png)
+
+sample 2
+![](sample2.png)
+
 ## Credit
 [.NET Compact Framework Team](https://blogs.msdn.microsoft.com/netcfteam/2006/04/25/net-compact-framework-v2-service-pack-1-data-grid-control-enhancements/)
+
+## System Requirement
+1. .Net Compact Framework 3.5 Service Pack 1
+2. Windows Mobile 5.0 or later
