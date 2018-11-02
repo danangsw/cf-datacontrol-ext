@@ -24,5 +24,5 @@ Format related properties are very easy to use, they can be set via designers th
 
 Overriding Paint() is not hard as well, but requires some coding. To illustrate how that can be done, I've created small sample which shows sample data in several custom columns.
 
-## Source
+## Credit
 [.NET Compact Framework Team](https://blogs.msdn.microsoft.com/netcfteam/2006/04/25/net-compact-framework-v2-service-pack-1-data-grid-control-enhancements/)
