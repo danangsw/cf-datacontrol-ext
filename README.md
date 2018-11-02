@@ -53,7 +53,7 @@ private void SetupTableStyles()
             dataGridCustomColumn1.HeaderText = vehicle.Columns[1].ColumnName;
             dataGridCustomColumn1.MappingName = vehicle.Columns[1].ColumnName;
             dataGridCustomColumn1.NullText = "-Unknown-";
-            dataGridCustomColumn1.Width = this.dataGrid1.Width * 10 / 100;       // 40% of the grid size
+            dataGridCustomColumn1.Width = this.dataGrid1.Width * 10 / 100;       // 10% of the grid size
             dataGridCustomColumn1.Alignment = HorizontalAlignment.Center;
             dataGridCustomColumn1.AlternatingBackColor = alternatingColor;
 
@@ -67,7 +67,7 @@ private void SetupTableStyles()
             dataGridCustomColumn2.HeaderText = vehicle.Columns[2].ColumnName;
             dataGridCustomColumn2.MappingName = vehicle.Columns[2].ColumnName;
             dataGridCustomColumn2.NullText = "-Unknown-";
-            dataGridCustomColumn2.Width = this.dataGrid1.Width * 10 / 100;         // 15% of the grid size
+            dataGridCustomColumn2.Width = this.dataGrid1.Width * 10 / 100;         // 10% of the grid size
             dataGridCustomColumn2.Alignment = HorizontalAlignment.Right;
             dataGridCustomColumn2.AlternatingBackColor = alternatingColor;
             dataGridCustomColumn2.ReadOnly = true;
@@ -103,7 +103,7 @@ private void SetupTableStyles()
             dataGridCustomColumn5.HeaderText = vehicle.Columns[5].ColumnName;
             dataGridCustomColumn5.MappingName = vehicle.Columns[5].ColumnName;
             dataGridCustomColumn5.NullText = "-Unknown-";
-            dataGridCustomColumn5.Width = this.dataGrid1.Width * 10 / 100;        // 30% of the grid size
+            dataGridCustomColumn5.Width = this.dataGrid1.Width * 10 / 100;        // 10% of the grid size
             dataGridCustomColumn5.Alignment = HorizontalAlignment.Left;
             dataGridCustomColumn5.AlternatingBackColor = alternatingColor;
 
@@ -115,7 +115,7 @@ private void SetupTableStyles()
             dataGridCustomColumn6.HeaderText = vehicle.Columns[6].ColumnName;
             dataGridCustomColumn6.MappingName = vehicle.Columns[6].ColumnName;
             dataGridCustomColumn6.NullText = "-Unknown-";
-            dataGridCustomColumn6.Width = this.dataGrid1.Width * 10 / 100;        // 30% of the grid size
+            dataGridCustomColumn6.Width = this.dataGrid1.Width * 10 / 100;        // 10% of the grid size
             dataGridCustomColumn6.Alignment = HorizontalAlignment.Right;
             dataGridCustomColumn6.AlternatingBackColor = alternatingColor;
             dataGridCustomColumn6.ReadOnly = true;
