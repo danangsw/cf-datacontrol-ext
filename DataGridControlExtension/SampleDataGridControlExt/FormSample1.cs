@@ -29,7 +29,7 @@ namespace SampleDataGridControlExt
 
         private void SetupTableStyles()
         {
-            var alternatingColor = SystemColors.ControlDark;
+            var alternatingColor = System.Drawing.Color.LightGray;
             DataTable vehicle = this.dataSource.Tables[1];
 
             // ID Column 
@@ -90,8 +90,7 @@ namespace SampleDataGridControlExt
             dataGridCustomColumn4.HeaderText = vehicle.Columns[4].ColumnName;
             dataGridCustomColumn4.MappingName = vehicle.Columns[4].ColumnName;
             dataGridCustomColumn4.NullText = "-Unknown-";
-            dataGridCustomColumn4.Width = this.dataGrid1.Width * 10 / 100;        // 10% of the grid size
-            dataGridCustomColumn4.Alignment = HorizontalAlignment.Center;
+            dataGridCustomColumn4.Width = this.dataGrid1.Width * 10 / 100;
             dataGridCustomColumn4.AlternatingBackColor = alternatingColor;
 
             this.DataGridTableStyle1.GridColumnStyles.Add(dataGridCustomColumn4);
