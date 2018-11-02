@@ -1,2 +1,2 @@
 # cf-datacontrol-ext
-.Net Compact Framework Data Grid control enhancements.
+.Net Compact Framework 3.5 SP 1 Data Grid control enhancements.
