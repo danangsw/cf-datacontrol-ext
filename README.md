@@ -143,10 +143,12 @@ private void SetupTableStyles()
 
 ## Sample screenshot
 sample 1
-![](sample1.png)
+
+![](Images/sample1.png)
 
 sample 2
-![](sample2.png)
+
+![](Images/sample2.png)
 
 ## Credit
 [.NET Compact Framework Team](https://blogs.msdn.microsoft.com/netcfteam/2006/04/25/net-compact-framework-v2-service-pack-1-data-grid-control-enhancements/)
