@@ -106,6 +106,8 @@ private void SetupTableStyles()
             dataGridCustomColumn5.Width = this.dataGrid1.Width * 10 / 100;        // 10% of the grid size
             dataGridCustomColumn5.Alignment = HorizontalAlignment.Left;
             dataGridCustomColumn5.AlternatingBackColor = alternatingColor;
+            
+            this.DataGridTableStyle1.GridColumnStyles.Add(dataGridCustomColumn5);
 
             // Price column
             var dataGridCustomColumn6 = new DataGridCustomDateTimePickerColumn();
