@@ -7,7 +7,7 @@ However, Compact Framework version of the Data Grid is not as extensible as its 
 
 Among most requested features is the ability to format data displayed by Data Grid, check box column availability and inability to use different colors for odd and even rows (even though very complex solution for last one is available here).
 
-Compact framework V2 Service Pack 1 introduces minor, but very useful extensions to address these issues either directly (e.g. data formatting) or by allowing customer to perform custom cell drawings to achieve desired results.
+Data Grid control extension introduces minor, but very useful extensions to address these issues either directly (e.g. data formatting) or by allowing customer to perform custom cell drawings to achieve desired results.
 
 ## Methods & Properties
 
@@ -100,13 +100,15 @@ private void SetupTableStyles()
             // Last Used column
             var dataGridCustomColumn5 = new DataGridCustomDateTimePickerColumn();
             dataGridCustomColumn5.Owner = this.dataGrid1;
+            dataGridCustomColumn5.Format = "G";
+            dataGridCustomColumn5.FormatInfo = CultureInfo.InvariantCulture;
             dataGridCustomColumn5.HeaderText = vehicle.Columns[5].ColumnName;
             dataGridCustomColumn5.MappingName = vehicle.Columns[5].ColumnName;
             dataGridCustomColumn5.NullText = "-Unknown-";
-            dataGridCustomColumn5.Width = this.dataGrid1.Width * 10 / 100;        // 10% of the grid size
+            dataGridCustomColumn5.Width = this.dataGrid1.Width * 10 / 100;        // 30% of the grid size
             dataGridCustomColumn5.Alignment = HorizontalAlignment.Left;
             dataGridCustomColumn5.AlternatingBackColor = alternatingColor;
-            
+
             this.DataGridTableStyle1.GridColumnStyles.Add(dataGridCustomColumn5);
 
             // Price column
@@ -117,7 +119,7 @@ private void SetupTableStyles()
             dataGridCustomColumn6.HeaderText = vehicle.Columns[6].ColumnName;
             dataGridCustomColumn6.MappingName = vehicle.Columns[6].ColumnName;
             dataGridCustomColumn6.NullText = "-Unknown-";
-            dataGridCustomColumn6.Width = this.dataGrid1.Width * 10 / 100;        // 10% of the grid size
+            dataGridCustomColumn6.Width = this.dataGrid1.Width * 10 / 100;        // 30% of the grid size
             dataGridCustomColumn6.Alignment = HorizontalAlignment.Right;
             dataGridCustomColumn6.AlternatingBackColor = alternatingColor;
             dataGridCustomColumn6.ReadOnly = true;
