@@ -152,3 +152,4 @@ sample 2
 ## System Requirement
 1. .Net Compact Framework 3.5 Service Pack 1
 2. Windows Mobile 5.0 or later
+3. Microsoft Visual Studio 2008
