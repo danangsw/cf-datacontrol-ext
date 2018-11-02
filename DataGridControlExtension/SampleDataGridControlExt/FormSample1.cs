@@ -91,6 +91,7 @@ namespace SampleDataGridControlExt
             dataGridCustomColumn4.MappingName = vehicle.Columns[4].ColumnName;
             dataGridCustomColumn4.NullText = "-Unknown-";
             dataGridCustomColumn4.Width = this.dataGrid1.Width * 10 / 100;
+            dataGridCustomColumn4.Alignment = HorizontalAlignment.Center;
             dataGridCustomColumn4.AlternatingBackColor = alternatingColor;
 
             this.DataGridTableStyle1.GridColumnStyles.Add(dataGridCustomColumn4);
@@ -98,12 +99,16 @@ namespace SampleDataGridControlExt
             // Last Used column
             var dataGridCustomColumn5 = new DataGridCustomDateTimePickerColumn();
             dataGridCustomColumn5.Owner = this.dataGrid1;
+            dataGridCustomColumn5.Format = "G";
+            dataGridCustomColumn5.FormatInfo = CultureInfo.InvariantCulture;
             dataGridCustomColumn5.HeaderText = vehicle.Columns[5].ColumnName;
             dataGridCustomColumn5.MappingName = vehicle.Columns[5].ColumnName;
             dataGridCustomColumn5.NullText = "-Unknown-";
             dataGridCustomColumn5.Width = this.dataGrid1.Width * 10 / 100;        // 30% of the grid size
             dataGridCustomColumn5.Alignment = HorizontalAlignment.Left;
             dataGridCustomColumn5.AlternatingBackColor = alternatingColor;
+
+            this.DataGridTableStyle1.GridColumnStyles.Add(dataGridCustomColumn5);
 
             // Price column
             var dataGridCustomColumn6 = new DataGridCustomDateTimePickerColumn();
