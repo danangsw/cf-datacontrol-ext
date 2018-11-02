@@ -4,16 +4,16 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>9.0.30729</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{4482894A-65CC-45C2-B648-5A8C7DB8D564}</ProjectGuid>
-    <OutputType>Library</OutputType>
+    <ProjectGuid>{2E539F1F-76FE-45E6-8AA3-B330D8905459}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>DataGridControlExtension</RootNamespace>
-    <AssemblyName>DataGridControlExtension</AssemblyName>
+    <RootNamespace>SampleDataGridControlExt</RootNamespace>
+    <AssemblyName>SampleDataGridControlExt</AssemblyName>
     <ProjectTypeGuids>{4D628B5B-2FBC-4AA6-8C16-197242AEB884};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <PlatformFamilyName>WindowsCE</PlatformFamilyName>
     <PlatformID>E2BECB1F-8C8C-41ba-B736-9BE7D946A398</PlatformID>
     <OSVersion>5.0</OSVersion>
-    <DeployDirSuffix>DataGridControlExtension</DeployDirSuffix>
+    <DeployDirSuffix>SampleDataGridControlExt</DeployDirSuffix>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <NativePlatformName>Windows CE</NativePlatformName>
     <FormFactorID>
@@ -56,26 +56,32 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DataGridCustomCheckBoxColumn.cs">
-      <SubType>Component</SubType>
+    <Compile Include="FormSample1.cs">
+      <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DataGridCustomColumnBase.cs">
-      <SubType>Component</SubType>
+    <Compile Include="FormSample1.Designer.cs">
+      <DependentUpon>FormSample1.cs</DependentUpon>
     </Compile>
-    <Compile Include="DataGridCustomComboBoxColumn.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="DataGridCustomDateTimePickerColumn.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="DataGridCustomTextBoxColumn.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="DataGridCustomUpDownColumn.cs">
-      <SubType>Component</SubType>
-    </Compile>
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Service Include="{94E38DFF-614B-4cbd-B67C-F211BB35CE8B}" />
+    <EmbeddedResource Include="FormSample1.resx">
+      <DependentUpon>FormSample1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DataGridControlExtension\DataGridControlExtension.csproj">
+      <Project>{4482894A-65CC-45C2-B648-5A8C7DB8D564}</Project>
+      <Name>DataGridControlExtension</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CompactFramework.CSharp.targets" />
   <ProjectExtensions>
